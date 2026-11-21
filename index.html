@@ -488,9 +488,9 @@ const CONFIG = {
   specialInvite: "",
   compliments: "All Mittal Family, Relatives & Friends",
   // Moment used for the countdown (India time)
-  countdownTo: { date: "2026-12-11", time: "19:15", label: "Counting down to the baraat" },
+  countdownTo: { date: "2026-12-11", time: "19:00", label: "Counting down to the baraat" },
   // Google Calendar entry
-  calendar: { date: "2026-12-11", time: "18:15", durationHours: 5 },
+  calendar: { date: "2026-12-11", time: "18:00", durationHours: 5 },
   venues: {
     resort: { name: "Royal Palm Resorts", area: "Tosham Road, Hisar", tag: "All celebrations" }
   },
@@ -500,19 +500,19 @@ const CONFIG = {
       about: "A bright morning of haldi and blessings as the family gathers around the groom before the big day." },
     { key: "sangeet", hi: "संगीत संध्या", name: "Sangeet", tagline: "An evening of music and dance",
       date: "2026-12-10", time: "19:00", venue: "resort",
-      about: "Songs, performances and plenty of dancing. Come ready to celebrate with both families." },
+      about: "Songs, performances and plenty of dancing. Come ready to celebrate with us!" },
     { key: "ghurchari", hi: "घुड़चढ़ी", name: "Ghurchari", tagline: "The groom mounts the mare",
-      date: "2026-12-11", time: "18:15", venue: "resort",
+      date: "2026-12-11", time: "18:00", venue: "resort",
       about: "The evening begins as Kannav rides out on the decorated ghodi, with family blessings and the first beats of the dhol." },
     { key: "baraat", hi: "बारात", name: "Departure of Baraat", tagline: "Dance your way to the wedding",
-      date: "2026-12-11", time: "19:15", venue: "resort",
+      date: "2026-12-11", time: "19:00", venue: "resort",
       about: "The baraat sets off with music and dancing. Bring your best moves and join the procession." },
     { key: "dinner", hi: "प्रीतिभोज", name: "Dinner", tagline: "A feast with family and friends",
-      date: "2026-12-11", time: "20:15", venue: "resort",
+      date: "2026-12-11", time: "20:00", venue: "resort",
       about: "Celebrate the couple over dinner with everyone who made this day possible." }
   ],
   families: [
-    { side: "Groom's family", name: "Mittal Family", people: "Smt. Mamta & Sh. Sanjeev Mittal",
+    { side: "", name: "Mittal Family", people: "Smt. Mamta & Sh. Sanjeev Mittal",
       address: "#110-A, Prem Nagar, Hisar", phones: ["+91 94161 87072", "+91 89302 00816"] },
 
   ],
@@ -718,7 +718,7 @@ function render() {
   }).join("");
 
   const fams = C.families.map(f => `<div class="fam">
-      <p class="side">${esc(f.side)}</p>
+      ${f.side ? `<p class="side">${esc(f.side)}</p>` : ""}
       <h3>${esc(f.name)}</h3>
       ${f.people ? `<p class="who">${esc(f.people)}</p>` : ""}
       ${f.address ? `<p class="addr"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></svg>${esc(f.address)}</p>` : ""}
